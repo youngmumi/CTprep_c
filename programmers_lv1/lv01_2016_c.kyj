@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+
+char* solution(int a, int b) {
+    
+    char* week[]={"FRI", "SAT","SUN","MON", "TUE", "WED","THU"}; //Day of the Week in the string, January 1st, 2016 starts on Friday
+    char* answer = (char*)malloc(sizeof(week));
+    
+    int last_day[15] = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}; //The last day in the string. The leap year consists of February 29th
+    int total=0;
+    
+    for(int i=0; i<a-1 ;i++){ // Add days by 'a' of months
+        total+=last_day[i];
+    }
+    
+    total += b-1; //The date starts on the 1st. 
+    answer=week[total%7];
+    
+    return answer;
+}
