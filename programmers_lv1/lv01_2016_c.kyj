@@ -14,7 +14,7 @@ char* solution(int a, int b) {
         total+=last_day[i];
     }
     
-    total += b-1; //The date starts on the 1st. 
+    total += b; 
     answer=week[total%7];
     
     return answer;
