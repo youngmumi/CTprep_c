@@ -10,7 +10,7 @@ bool solution(const char* s) {
     
     
     for(i=0; i< strlen(s); i++){
-        if('0'<= s[i] || '9'>= s[i])
+        if(48 >= s[i] || 57 <= s[i])
             break;
     }
 
