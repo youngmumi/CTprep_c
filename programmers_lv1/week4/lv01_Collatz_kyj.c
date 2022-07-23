@@ -1,3 +1,5 @@
+문제: https://school.programmers.co.kr/learn/courses/30/lessons/12943
+
 #include <stdio.h>
 
 int solution(long long num) { //must be 'long long'
