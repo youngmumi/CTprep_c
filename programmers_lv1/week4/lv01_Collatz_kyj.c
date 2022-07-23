@@ -15,7 +15,6 @@ int solution(long long num) { //must be 'long long'
             answer++;
         }
 		}
-        else if(num==1) break;
     }
    
     if(answer>=500) return -1 ;
