@@ -4,28 +4,71 @@
 
 char* newid[MAX_SIZE]={"...!@BaT#*..y.abcdefghijklm"}; 
 
-void solution(const char* newid[]) {
+void solution(char* newid[]) {
 	
-    char answer[MAX_SIZE]= newid[] ;
     
-    strlwr(newid); //소문자로 변환
+    strlwr(newid); //Convert to lowercase
 	
-	for (; *newid != '\0'; newid++)//소문자, 숫자, '.' , '-', '_' 빼고 다 지우기 
+	for (; *newid != '\0'; newid++)//Clear all but lowercase letters, numbers, '.', '-', and '_' 
     {
         if (*newid >= '0' && *newid <= '0' && *newid >= 'a' && *newid <= 'z' && *newid == '-' && *newid == '_' && *newid== '.')//
-        {
-        	
+		{
         }
         else {
         	strcpy(newid, newid + 1);
             newid--;
 		}
-
     } 
     
-    if() 
+    for (int i=0; *newid != '\0'; newid++) //Replacement of two (.) with one (.)
+	{
+    	if(newid[i]=='.'&&newid[i+1]=='.'){
+    		strcpy(newid, newid + 1);
+            newid--;
+		}
+		
+		i++;
+	}
     
-    return answer;
+    for (int i=0; *newid != '\0'; newid++) //Remove (.) when it is first
+	{
+    	if(newid[0]=='.'){
+    		strcpy(newid, newid + 1);
+            newid--;
+		}		
+	}
+    
+    int last==strlen(*newid); //Remove (.) when it is last 
+    
+    if(*newid[last]=='.'){
+    	newid[last]=='\0';
+	}
+	
+	if(*newid[0]=='\0'){ //Enter 'a' when a string is empty 
+		newid[0]=='a';
+	}
+	
+	length=strlen(*newid);
+	
+	if(length>=16){ //Cut at least 16 characters
+		for (int i= 16; *newid != '\0'; i++){
+			newid[i]=='\0';
+		}
+	}
+	
+	int last==strlen(*newid);
+	
+	if(*newid[last]=='.'){ //After Cut at least 16 characters, Remove (.) when it is last
+    	newid[last]=='\0';
+	}
+	
+	if(length<=2){ //Repeat the last character until it is 3 characters when it is 2 or more characters
+		for (int i= length; i==3; i++){
+			strcpy(newid+1, newid);
+		}
+	}
+	
+    return newid;
 }
 
 
