@@ -1,2 +1,2 @@
-# CTprep_c_
+# CTprep_c
 C
