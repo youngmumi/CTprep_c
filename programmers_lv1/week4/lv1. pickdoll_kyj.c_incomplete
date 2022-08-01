@@ -1,0 +1,93 @@
+#include<stdio.h>
+#include<string.h>
+#define N 1024
+
+//구조체를 이용하여 스택에 저장 되는 값들의 배열인 stk와 가장 윗단 top을 선언
+struct stack {
+	int stk[N];
+	int top;
+};
+
+//stack이 만들어 지면 사용 될 top을 초기화
+void initStack(stack* S) {
+	S->top = -1;
+}
+
+//스택이 비었는지 확인. 각 개별 스택을 구분하기 위해 포인터를 사용한다.
+bool isEmpty(stack* S) {
+	if (S->top < 0)
+		return true;
+	else
+		return false;
+}
+
+//스택이 차있는지 확인. 각 개별 스택을 구분하기 위해 포인터를 사용한다.
+bool isFull(stack* S) {
+	if (S->top >= N)
+		return true;
+	else
+		return false;
+}
+
+//스택에 v를 push 구조체 stack에 있는 변수인 stk와 top을 사용하기 위해 ->를 사용한다.
+void push(stack* S, int v) {
+	if (isFull(S))
+		cout << "스택이 꽉 차있습니다.\n";
+	else
+		S->stk[++(S->top)] = v;
+}
+
+//스택에 저장 된 값을 pop 구조체 stack에 있는 변수인 stk와 top을 사용하기 위해 ->를 사용한다.
+int pop(stack* S) {
+	if (isEmpty(S))
+		cout << "스택에 값이 없습니다.\n";
+	else 
+		return S->stk[(S->top)--];
+	
+}
+
+//스택의 가장 윗단인 top을 리턴 구조체 stack에 있는 변수인 stk와 top을 사용하기 위해 ->를 사용한다.
+int Top(stack* S) {
+	if (isEmpty(S))
+		cout << "스택에 값이 없습니다.\n";
+	else
+		return S->stk[S->top];
+}
+
+
+int solution( ) {
+	
+    int answer = 0;
+    
+    stack board;
+    stack moves;
+    stack doll;
+    
+    initStack(&board);
+	initStack(&moves);
+	initStack(&doll);
+    
+    
+    for(int i=0;i<sizeof(board);i++)
+    {
+        int check = moves[i] - 1;
+        
+        for(int j=0;j<sizeof(moves);j++)
+        {
+            if(board[j][check] != 0)
+            {
+                if(!is_stack_empty() && top() == board[j][check])
+                {
+                    pop();
+                    answer += 2;
+                }
+                else
+                	push(board[j][check]);
+                    
+                board[j][check] = 0;
+                break;
+            }
+        }
+    }
+    return answer;
+}
