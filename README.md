@@ -1,2 +1,2 @@
 # CTprep_c
-C
+C언어
