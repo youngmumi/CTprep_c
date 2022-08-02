@@ -61,7 +61,7 @@ void find (record[4][2], answer[MAX_SIZE], location[4][2], numbers[i], keypad[4]
 }
 
 
-void solution(){
+int main(){
 	
 	int numbers[MAX_SIZE]={1, 3, 4, 5, 8, 2, 1, 4, 5, 9, 5};
 	char answer[MAX_SIZE];
