@@ -9,7 +9,7 @@ void solution(char* newid[]) {
     
     strlwr(newid); //Convert to lowercase
 	
-	for (; *newid != '\0'; newid++)//Clear all but lowercase letters, numbers, '.', '-', and '_' 
+	for (; *newid != '\0'; newid++) //Clear all but lowercase letters, numbers, '.', '-', and '_' 
     {
         if (*newid >= '0' && *newid <= '0' && *newid >= 'a' && *newid <= 'z' && *newid == '-' && *newid == '_' && *newid== '.')//
 		{
