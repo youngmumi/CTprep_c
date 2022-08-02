@@ -27,12 +27,12 @@ int main(){
 	for(int j=0; j<i; j++)
 		scanf("%d", arr2 + j);
 		
-	for (i = 0; i < n; i++){ //반복
+	for (i = 0; i < n; i++){ //Repetition
 		num = arr1[i] | arr2[i];
-		goBinary(num, i); //이진수
+		goBinary(num, i); //a binary number
 		
 		for(j = 0; j< leng; j++)
-			result[i][j] = ((bn[i][j] >= 1)? '#' : ' '); //출력 관련
+			result[i][j] = ((bn[i][j] >= 1)? '#' : ' '); //Output
 		for (int k = leng -1; k >= 0; k--)
 			printf("%c", result[i][k]);
 			
