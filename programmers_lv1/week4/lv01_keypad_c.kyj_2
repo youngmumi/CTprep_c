@@ -1,0 +1,137 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#define MAX_SIZE 1000
+
+void find (record[4][2], answer[MAX_SIZE], location[4][2], numbers[i], keypad[4][3]){
+	 
+	int distance_L;
+	int distance_R;
+	int x1, x2, y1, y2;
+	
+	
+	if(answer[location]=="L"&&answer[location-1]=="R"){
+		for(int j1; j1<strlen(numbers);j1++){
+			for(int k2; k2<strlen(numbers);k2++){
+				if(record[j1][k1]==location){
+						x1= j1;
+						y1= k2;
+						break;
+					}
+				}
+			}
+		for(int j2; j2<strlen(numbers);j2++){
+			for(int k2; k2<strlen(numbers);k2++){
+					if(record[j2][k2]==location-1){
+						x2= j2;
+						y2= k2;
+						break;
+					}
+				}
+			}
+			
+		distance_L = sqrt(pow(x2 - x1) + pow (y2 - y1));
+		distance_R = sqrt(pow(x2 - x1) + pow (y2 - y1));
+		
+	}
+	else if(answer[location]=="R"&&answer[location-1]=="L"){
+		for(int j; j<strlen(numbers);j++){
+			for(int k; k<strlen(numbers);k++){
+				if(record[j][k]==location){
+						x1= j;
+						y1= k;
+						break;
+					}
+				}
+			}
+		for(int j; j<strlen(numbers);j++){
+			for(int k; k<strlen(numbers);k++){
+					if(record[j][k]==location-1){
+						x2= j;
+						y2= k;
+						break;
+					}
+				}
+			}
+			
+		distance_L = sqrt(pow(x2 - x1) + pow (y2 - y1));
+		distance_R = sqrt(pow(x2 - x1) + pow (y2 - y1));
+				}
+}
+
+
+void solution(){
+	
+	int numbers[MAX_SIZE]={1, 3, 4, 5, 8, 2, 1, 4, 5, 9, 5};
+	char answer[MAX_SIZE];
+	int location=0;
+	
+	int keypad[4][3]={ 
+	{1, 4, 7, *}, //*=10
+	{2, 5, 8, 0},
+	{3, 6, 9, #} //#=11
+	}
+	
+	/*'1'==keypad[0][0]; L
+	'2'==keypad[0][1];
+	'3'==keypad[0][2]; R
+	'4'==keypad[1][0]; L
+	'5'==keypad[1][1];
+	'6'==keypad[1][2]; R
+	'7'==keypad[2][0]; L
+	'8'==keypad[2][1];
+	'9'==keypad[2][2]; R
+	'*'==keypad[3][0]; L
+	'0'==keypad[3][1];
+	'#'==keypad[3][2]; R */ 
+	
+	int record[4][3]={ };
+	
+	for(int i; i<strlen(numbers); i++){
+		
+		switch(numbers[i])
+			case 1:
+				strcat(answer, "L");
+				record[0][0]== location;
+				location++
+			case 3:
+				strcat(answer, "R");
+				record[0][2]== location;
+				location++
+			case 4:
+				strcat(answer, "L");
+				record[1][0]== location;
+				location++
+			case 6:
+				strcat(answer, "R");
+				record[1][2]== location;
+				location++
+			case 7:
+				strcat(answer, "L");
+				record[2][0]== location;
+				location++
+			case 9:
+				strcat(answer, "R");
+				record[2][2]== location;
+				location++
+			case '*':
+				strcat(answer, "L");
+				record[3][0]== location;
+				location++
+			case '#':
+				strcat(answer, "R");
+				record[3][2]== location;
+				location++
+			default :
+				find (numbers[i], record, answer, location)
+			
+	}
+	
+	for(int i; i<strlen(answer); i++){
+		printf("%d", answer);
+	}
+	
+	return 0;
+		
+}
