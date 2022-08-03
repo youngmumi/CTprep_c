@@ -1,2 +1,2 @@
 # CTprep_c
-C언어
+C, cpp
