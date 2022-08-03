@@ -1,0 +1,44 @@
+#include <string>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+vector<int> solution(int N, vector<int> stages) {
+    
+    vector<int> answer(N);
+    
+    int n=0;
+    int people=N;
+    float fail = 0;
+    int tmp[N+1][2];
+    int descending_order[]={ };
+    
+    for(int i=0; i<sizeof(stages);i++){
+        for(int j=1; j<N;j++){
+             if(stage[i]==j){  
+                n++;
+                tmp[i]==n;
+            }   
+            else if(stage[i]==N+1){
+                tmp[N+1]+=1;
+            }
+        } 
+    }
+    
+    for(int i=1; i<N; i++){
+        tmp[i]/people=fail;
+        descending_order[i]=fail;
+        people-=tmp[i];
+    }
+    
+    sort(descending_order, N, comp);
+    
+    for(int i=0; i<sizeof(descending order); i++){
+        for(int j=0; j<N; j++){
+            
+        }
+    }
+    
+    return answer;
+}
