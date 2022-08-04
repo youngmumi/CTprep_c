@@ -12,8 +12,8 @@ void find (record[4][2], answer[MAX_SIZE], location[4][2], numbers[i], keypad[4]
 	
 	
 	if(answer[location]=="L"&&answer[location-1]=="R"){
-		for(int j1; j1<strlen(numbers);j1++){
-			for(int k2; k2<strlen(numbers);k2++){
+		for(int j1=0; j1<strlen(numbers);j1++){
+			for(int k=02; k2<strlen(numbers);k2++){
 				if(record[j1][k1]==location){
 						x1= j1;
 						y1= k2;
@@ -21,8 +21,8 @@ void find (record[4][2], answer[MAX_SIZE], location[4][2], numbers[i], keypad[4]
 					}
 				}
 			}
-		for(int j2; j2<strlen(numbers);j2++){
-			for(int k2; k2<strlen(numbers);k2++){
+		for(int j2=0; j2<strlen(numbers);j2++){
+			for(int k2=0; k2<strlen(numbers);k2++){
 					if(record[j2][k2]==location-1){
 						x2= j2;
 						y2= k2;
@@ -36,8 +36,8 @@ void find (record[4][2], answer[MAX_SIZE], location[4][2], numbers[i], keypad[4]
 		
 	}
 	else if(answer[location]=="R"&&answer[location-1]=="L"){
-		for(int j; j<strlen(numbers);j++){
-			for(int k; k<strlen(numbers);k++){
+		for(int j=0; j<strlen(numbers);j++){
+			for(int k=0; k<strlen(numbers);k++){
 				if(record[j][k]==location){
 						x1= j;
 						y1= k;
@@ -45,8 +45,8 @@ void find (record[4][2], answer[MAX_SIZE], location[4][2], numbers[i], keypad[4]
 					}
 				}
 			}
-		for(int j; j<strlen(numbers);j++){
-			for(int k; k<strlen(numbers);k++){
+		for(int j=0; j<strlen(numbers);j++){
+			for(int k=0; k<strlen(numbers);k++){
 					if(record[j][k]==location-1){
 						x2= j;
 						y2= k;
@@ -88,7 +88,7 @@ int main(){
 	
 	int record[4][3]={ };
 	
-	for(int i; i<strlen(numbers); i++){
+	for(int i=0; i<strlen(numbers); i++){
 		
 		switch(numbers[i])
 			case 1:
@@ -128,7 +128,7 @@ int main(){
 			
 	}
 	
-	for(int i; i<strlen(answer); i++){
+	for(int i=0; i<strlen(answer); i++){
 		printf("%d", answer);
 	}
 	
