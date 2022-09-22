@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+	
+    char answer[45];
+    char s[99];
+    int length;
+    
+    scanf("%s", &s);
+    
+    length=strlen(s);
+    
+    if(length%2) {
+        answer[0]= s[length/2];
+        answer[1]='\0';
+        printf("%s", answer);
+    }
+    else {
+        answer[0] = s[length/2-1];
+        answer[1] = s[length/2];
+        answer[2]='\0';
+        printf("%s", answer);
+    }
+    
+	return 0;
+}
