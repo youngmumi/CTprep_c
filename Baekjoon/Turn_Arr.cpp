@@ -9,8 +9,6 @@ using namespace std;
 int N, M;
 int R;
 
-
-
 int A[MAX][MAX];
 
 void input(){
